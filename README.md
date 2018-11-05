@@ -19,7 +19,7 @@ $ npm install -g graphql-central-types
 $ types COMMAND
 running command...
 $ types (-v|--version|version)
-graphql-central-types/0.0.1 darwin-x64 node-v8.10.0
+graphql-central-types/0.0.2 darwin-x64 node-v8.10.0
 $ types --help [COMMAND]
 USAGE
   $ types COMMAND
@@ -31,6 +31,7 @@ USAGE
 * [`types help [COMMAND]`](#types-help-command)
 * [`types init`](#types-init)
 * [`types mergeSchemas`](#types-merge-schemas)
+* [`types schemaExports`](#types-schema-exports)
 
 ## `types help [COMMAND]`
 
@@ -61,7 +62,7 @@ EXAMPLE
   $ types init
 ```
 
-_See code: [src/commands/init.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.1/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.2/src/commands/init.ts)_
 
 ## `types mergeSchemas`
 
@@ -75,5 +76,19 @@ EXAMPLE
   $ types merge-schemas
 ```
 
-_See code: [src/commands/mergeSchemas.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.1/src/commands/mergeSchemas.ts)_
+_See code: [src/commands/mergeSchemas.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.2/src/commands/mergeSchemas.ts)_
+
+## `types schemaExports`
+
+make all schema root types into an exportable file
+
+```
+USAGE
+  $ types schemaExports
+
+EXAMPLE
+  $ types schemaExports
+```
+
+_See code: [src/commands/schemaExports.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.2/src/commands/schemaExports.ts)_
 <!-- commandsstop -->
