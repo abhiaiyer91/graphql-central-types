@@ -19,7 +19,7 @@ $ npm install -g graphql-central-types
 $ types COMMAND
 running command...
 $ types (-v|--version|version)
-graphql-central-types/0.0.0 darwin-x64 node-v8.10.0
+graphql-central-types/0.0.1 darwin-x64 node-v8.10.0
 $ types --help [COMMAND]
 USAGE
   $ types COMMAND
@@ -30,6 +30,7 @@ USAGE
 <!-- commands -->
 * [`types help [COMMAND]`](#types-help-command)
 * [`types init`](#types-init)
+* [`types mergeSchemas`](#types-merge-schemas)
 
 ## `types help [COMMAND]`
 
@@ -60,5 +61,19 @@ EXAMPLE
   $ types init
 ```
 
-_See code: [src/commands/init.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.1/src/commands/init.ts)_
+
+## `types mergeSchemas`
+
+merge all types from the Schemas directory and combine them into a single RootType.ts
+
+```
+USAGE
+  $ types mergeSchemas
+
+EXAMPLE
+  $ types merge-schemas
+```
+
+_See code: [src/commands/mergeSchemas.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.1/src/commands/mergeSchemas.ts)_
 <!-- commandsstop -->
