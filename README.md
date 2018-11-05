@@ -19,7 +19,7 @@ $ npm install -g graphql-central-types
 $ types COMMAND
 running command...
 $ types (-v|--version|version)
-graphql-central-types/0.0.5 darwin-x64 node-v8.10.0
+graphql-central-types/0.0.6 darwin-x64 node-v8.10.0
 $ types --help [COMMAND]
 USAGE
   $ types COMMAND
@@ -48,7 +48,7 @@ EXAMPLE
   $ types schemaExports
 ```
 
-_See code: [src/commands/exportSchemas.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.5/src/commands/exportSchemas.ts)_
+_See code: [src/commands/exportSchemas.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.6/src/commands/exportSchemas.ts)_
 
 ## `types exportTypeDefs`
 
@@ -62,7 +62,7 @@ EXAMPLE
   $ types exportTypeDefs
 ```
 
-_See code: [src/commands/exportTypeDefs.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.5/src/commands/exportTypeDefs.ts)_
+_See code: [src/commands/exportTypeDefs.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.6/src/commands/exportTypeDefs.ts)_
 
 ## `types generateSchemaJson`
 
@@ -76,11 +76,11 @@ EXAMPLE
   $ types generateSchemaJson
 ```
 
-_See code: [src/commands/generateSchemaJson.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.5/src/commands/generateSchemaJson.ts)_
+_See code: [src/commands/generateSchemaJson.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.6/src/commands/generateSchemaJson.ts)_
 
 ## `types generateServiceBindings`
 
-Scaffold the directory structure for the types repo
+Generate GraphQL bindings for your each schema
 
 ```
 USAGE
@@ -90,7 +90,7 @@ EXAMPLE
   $ types init
 ```
 
-_See code: [src/commands/generateServiceBindings.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.5/src/commands/generateServiceBindings.ts)_
+_See code: [src/commands/generateServiceBindings.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.6/src/commands/generateServiceBindings.ts)_
 
 ## `types help [COMMAND]`
 
@@ -121,7 +121,7 @@ EXAMPLE
   $ types init
 ```
 
-_See code: [src/commands/init.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.5/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.6/src/commands/init.ts)_
 
 ## `types mergeSchemas`
 
@@ -135,5 +135,5 @@ EXAMPLE
   $ types merge-schemas
 ```
 
-_See code: [src/commands/mergeSchemas.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.5/src/commands/mergeSchemas.ts)_
+_See code: [src/commands/mergeSchemas.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.6/src/commands/mergeSchemas.ts)_
 <!-- commandsstop -->
