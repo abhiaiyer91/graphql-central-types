@@ -35,6 +35,9 @@
     },
     "scripts": {
       "apollo-cli": "apollo",
+      "prettifyAllTypes": "prettier --write ./src/typeDefs/**/*.graphql",
+      "prettifyTypeDefs": "prettier --write ./src/typeDefinitions.ts",
+      "prettifyQueries": "prettier --write ./src/queries/index.ts",
       "mock-server": "ts-node ./MockServer",
       "build": "rimraf ./lib && tsc --project tsconfig.json && cp ./src/queries/schema.json ./lib/queries/",
       "prepare": "npm run prepareGraphQL && npm run build",
