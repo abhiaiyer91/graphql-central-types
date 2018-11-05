@@ -34,6 +34,7 @@
       "typescript": "^3.1.3"
     },
     "scripts": {
+      "apollo-cli": "apollo",
       "mock-server": "ts-node ./MockServer",
       "build": "rimraf ./lib && tsc --project tsconfig.json && cp ./src/queries/schema.json ./lib/queries/",
       "prepare": "npm run prepareGraphQL && npm run build",
