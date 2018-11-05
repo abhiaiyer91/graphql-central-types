@@ -1,7 +1,7 @@
 {
   "name": "graphql-central-types",
   "description": "CLI to generate a central types repository",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Abhi Aiyer @abhiaiyer91",
   "bin": {
     "types": "./bin/run"
