@@ -66,7 +66,7 @@ function readSchemaRootTypes() {
 }
 
 export default class GenerateServiceBinding extends Command {
-  static description = 'Scaffold the directory structure for the types repo';
+  static description = 'Generate GraphQL bindings for your each schema';
 
   static examples = [`$ types init`];
 
