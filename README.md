@@ -28,28 +28,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`types hello [FILE]`](#types-hello-file)
 * [`types help [COMMAND]`](#types-help-command)
-
-## `types hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ types hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ types hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.0/src/commands/hello.ts)_
+* [`types init`](#types-init)
 
 ## `types help [COMMAND]`
 
@@ -67,4 +47,18 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.3/src/commands/help.ts)_
+
+## `types init`
+
+Scaffold the directory structure for the types repo
+
+```
+USAGE
+  $ types init
+
+EXAMPLE
+  $ types init
+```
+
+_See code: [src/commands/init.ts](https://github.com/abhiaiyer91/graphql-central-types/blob/v0.0.0/src/commands/init.ts)_
 <!-- commandsstop -->
