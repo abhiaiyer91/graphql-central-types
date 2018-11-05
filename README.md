@@ -1,7 +1,7 @@
 graphql-central-types
 =====================
 
-CLI to generate a central types repository
+CLI for creating a centralized module of GraphQL type definitions, Bindings, queries
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/graphql-central-types.svg)](https://npmjs.org/package/graphql-central-types)
