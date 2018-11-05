@@ -1,0 +1,53 @@
+{
+    "name": "graphql-central-types",
+    "version": "0.0.0",
+    "description": "Central types repo",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "license": "MIT",
+    "devDependencies": {
+      "@types/express": "^4.16.0",
+      "@types/faker": "^4.1.4",
+      "@types/glob": "^7.1.1",
+      "@types/graphql": "^14.0.3",
+      "@types/isomorphic-fetch": "^0.0.34",
+      "@types/lodash": "^4.14.117",
+      "@types/mkdirp": "^0.5.2",
+      "@types/node": "^10.12.0",
+      "@types/shelljs": "^0.8.0",
+      "apollo": "^1.9.2",
+      "apollo-server-express": "^2.1.0",
+      "babel-eslint": "^10.0.1",
+      "eslint": "^5.7.0",
+      "eslint-plugin-graphql": "^2.1.1",
+      "express": "^4.16.4",
+      "faker": "^4.1.0",
+      "glob": "^7.1.3",
+      "lodash": "^4.17.11",
+      "merge-graphql-schemas": "^1.5.7",
+      "mkdirp": "^0.5.1",
+      "prettier": "^1.14.3",
+      "rimraf": "^2.6.2",
+      "shelljs": "^0.8.2",
+      "standard-version": "^4.4.0",
+      "ts-node": "^7.0.1",
+      "typescript": "^3.1.3"
+    },
+    "scripts": {
+      "mock-server": "ts-node ./MockServer",
+      "build": "rimraf ./lib && tsc --project tsconfig.json && cp ./src/queries/schema.json ./lib/queries/",
+      "prepare": "npm run prepareGraphQL && npm run build",
+      "release": "standard-version"
+    },
+    "dependencies": {
+      "apollo-link-context": "1.0.9",
+      "apollo-link-http": "1.5.5",
+      "graphql": "^14.0.2",
+      "graphql-binding": "^2.2.5",
+      "graphql-tools": "^4.0.1",
+      "isomorphic-fetch": "^2.2.1"
+    },
+    "resolutions": {
+      "graphql": "^14.0.2"
+    }
+  }
