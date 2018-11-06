@@ -1,7 +1,7 @@
 {
   "name": "graphql-central-types",
   "description": "CLI to generate a central types repository",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Abhi Aiyer @abhiaiyer91",
   "bin": {
     "types": "./bin/run"
@@ -65,9 +65,10 @@
   },
   "repository": "abhiaiyer91/graphql-central-types",
   "scripts": {
+    "copyTemplates": "cp -R ./src/templates ./lib/templates",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
-    "prepare": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepare": "rm -rf lib && tsc -b && npm run copyTemplates && oclif-dev manifest && oclif-dev readme",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts"
