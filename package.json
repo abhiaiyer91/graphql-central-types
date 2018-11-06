@@ -1,7 +1,7 @@
 {
   "name": "graphql-central-types",
   "description": "CLI to generate a central types repository",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Abhi Aiyer @abhiaiyer91",
   "bin": {
     "types": "./bin/run"
@@ -27,6 +27,7 @@
     "@oclif/tslint": "^3",
     "@types/chai": "^4",
     "@types/glob": "^7.1.1",
+    "@types/graphql": "^14.0.3",
     "@types/handlebars": "^4.0.39",
     "@types/mkdirp": "^0.5.2",
     "@types/mocha": "^5",
@@ -38,7 +39,7 @@
     "nyc": "^13",
     "ts-node": "^7",
     "tslint": "^5",
-    "typescript": "^3.0"
+    "typescript": "^3.1.6"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -66,7 +67,7 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepare": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts"

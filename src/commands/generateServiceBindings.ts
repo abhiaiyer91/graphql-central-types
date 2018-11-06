@@ -19,7 +19,7 @@ const GENERATED_JS_FILE_HEADER = `
 ******************************************************************************/
 `;
 
-function generateImportExportJsFile(name) {
+function generateImportExportJsFile(name: string) {
   const fileContents = `${GENERATED_JS_FILE_HEADER}
   import { ${name} } from '../Schemas'
   import ServiceBinding, { buildRootSchema } from './Binding';
@@ -38,8 +38,12 @@ function generateImportExportJsFile(name) {
   return fileContents;
 }
 
-function generateTypeDefinitionsIndex(files) {
-  each(files, ({ name }) => {
+interface ITypeFile {
+  name: string
+}
+
+function generateTypeDefinitionsIndex(files: ITypeFile[]) {
+  each(files, ({ name }: ITypeFile) => {
     return fs.writeFileSync(
       path.join(
         SRC_DIR_NAME,

@@ -1,10 +1,12 @@
 import * as fs from 'fs';
 import * as glob from 'glob';
-import { last, map, reduce } from 'lodash';
+import { last, map, isNil, reduce } from 'lodash';
 import { Command } from '@oclif/command';
 import * as mkdirp from 'mkdirp';
 import * as path from 'path';
 import * as shell from 'shelljs';
+
+import { ITypeFile, IOutputText } from '../interfaces';
 
 const TYPE_DEFINITIONS_JS_FILENAME = 'typeDefinitions.ts';
 const SRC_DIR_NAME = 'src';
@@ -21,13 +23,13 @@ const GENERATED_JS_FILE_HEADER = `
 ******************************************************************************/
 `;
 
-function generateGraphqlFileContents(str) {
+function generateGraphqlFileContents(str: string) {
   return `
 ${str}
 `;
 }
 
-function generateImportExportJsFile(importList, exportList) {
+function generateImportExportJsFile(importList: string, exportList: string) {
   const fileContents = `${GENERATED_JS_FILE_HEADER}
 ${importList}
 export default {
@@ -37,11 +39,11 @@ export default {
   return fileContents;
 }
 
-function generateTypeDefinitionsIndex(files) {
+function generateTypeDefinitionsIndex(files: ITypeFile[]) {
   const importList = reduce(
     files,
-    (memo, { name, filePath }) => {
-      const typeDef = fs.readFileSync(filePath, 'utf-8');
+    (memo: IOutputText, { name, content }) => {
+      const typeDef = fs.readFileSync(content, 'utf-8');
       if (!!memo[name]) {
         return memo;
       }
@@ -67,7 +69,7 @@ function generateTypeDefinitionsIndex(files) {
   );
 }
 
-function queryNameAndFileFromPath(path) {
+function queryNameAndFileFromPath(path: string) {
   const queryFile = path.replace('./src/queries/', '');
   const queryName = last(queryFile.replace('.graphql', '').split('/'));
   return { queryFile: path, queryName };
@@ -108,7 +110,7 @@ function generateIndexFileForGraphqlQueries() {
   );
 }
 
-function generateEnumJsFile(graphqlFileContent, filePath) {
+function generateEnumJsFile(graphqlFileContent: string, filePath: string) {
   const enumMatches = graphqlFileContent.match(/enum[\s\w]+{[\s\w]+}/);
 
   if (!enumMatches) {
@@ -122,6 +124,11 @@ function generateEnumJsFile(graphqlFileContent, filePath) {
   const [enumLine, ...valuesLines] = enumSubstr
     .replace(/[{}]/g, '')
     .split(/\n/);
+
+  if (isNil(enumLine)) {
+    console.error('Unable to parse enum definition\n' + filePath);
+    return;
+  }
 
   const enumName = enumLine.match(/enum\s+(\w+)\s+/)[1];
 
@@ -190,7 +197,7 @@ function readNonGeneratedGraphqlTypes() {
 
     return {
       name,
-      filePath
+      content: filePath
     };
   });
 }

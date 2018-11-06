@@ -5,6 +5,8 @@ import { map, reduce } from 'lodash';
 import * as path from 'path';
 import * as shell from 'shelljs';
 
+import { ITypeFile, IOutputText } from '../interfaces';
+
 const SRC_DIR_NAME = 'src';
 const SCHEMA_DIR_NAME = 'Schemas';
 const ROOT_TYPE_FILE = 'index.ts';
@@ -19,17 +21,17 @@ const GENERATED_JS_FILE_HEADER = `
 ******************************************************************************/
 `;
 
-function generateImportExportJsFile(exportList) {
+function generateImportExportJsFile(exportList: string) {
   const fileContents = `${GENERATED_JS_FILE_HEADER}
   ${exportList}
 `;
   return fileContents;
 }
 
-function generateTypeDefinitionsIndex(files) {
+function generateTypeDefinitionsIndex(files: ITypeFile[]) {
   const exportList = reduce(
     files,
-    (memo, { name, content }) => {
+    (memo: IOutputText, { name, content }) => {
       if (!!memo[name]) {
         return memo;
       }
