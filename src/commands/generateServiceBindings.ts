@@ -22,7 +22,7 @@ const GENERATED_JS_FILE_HEADER = `
 function generateImportExportJsFile(name: string) {
   const fileContents = `${GENERATED_JS_FILE_HEADER}
   import { ${name} } from '../Schemas'
-  import ServiceBinding, { buildRootSchema } from './Binding';
+  import ServiceBinding, { buildRootSchema } from 'graphql-service-binding';
   interface ICreateBinding {
     uri: string,
     headersToForward: string[]
