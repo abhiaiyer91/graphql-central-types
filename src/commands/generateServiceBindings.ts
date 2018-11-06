@@ -23,13 +23,16 @@ function generateImportExportJsFile(name: string) {
   const fileContents = `${GENERATED_JS_FILE_HEADER}
   import { ${name} } from '../Schemas'
   import ServiceBinding, { buildRootSchema } from 'graphql-service-binding';
+  import typeDefinitions from '../typeDefinitions';
+
   interface ICreateBinding {
     uri: string,
     headersToForward: string[]
   }
+
   export default function ${name}Binding({ uri, headersToForward }: ICreateBinding) {
     return new ServiceBinding({
-      typeDefs: buildRootSchema(${name}),
+      typeDefs: buildRootSchema(${name}, typeDefinitions),
       uri,
       headersToForward,
     });
